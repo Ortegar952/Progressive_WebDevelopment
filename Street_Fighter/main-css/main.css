@@ -1,0 +1,140 @@
+        /* FIGHTING ARENA STYLES */
+body, html{
+      padding: 0;
+      margin:0;
+      text-align: center;
+}
+.stage{
+  background-image: url("/images/stage1.gif");
+  min-height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.start-button img{
+    margin: 0 auto;
+    animation-name:bounceIn;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+.start-button img:hover{
+    cursor: pointer;
+}
+
+        /* PLAYERS STYLES */
+#player1{
+    opacity:0;
+    height:280px;
+    float:left;
+    margin-left:30px;
+    height:280px;
+}
+.Player2Cont{
+    opacity: 0;
+    margin-left: 1020px;
+    position: absolute;
+    transform: scaleX(-1);
+}
+#player2{
+    float: right;
+    height: 280px;
+}
+.player2 img{
+    z-index: -1;
+}
+
+    /* ANIMATION FOR PLAYERS AND TITLE */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+    }
+    25%{
+        transform: scale(0.7);
+    }
+    50%{
+        transform: scale(0.8);
+    }
+    75%{
+        transform: scale(0.9);
+    }
+    100%{
+        transform: scale(1.2);
+    }
+}
+
+        /* HIDING AUDIOS ON THE PAGE */
+#ko, #powerUp, #win, #attack, #akuma, #JumpSound, #RyuJump, #ryuVic, #ryuAttack, #ryuPunch, #punchCombo{
+    display: none;
+}
+.health-bar{
+    margin-top:10px;
+    opacity: 0;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 350px;
+    height: 34px;
+    padding: 8px;
+    background: #ddd;
+    border-radius: 5px;
+  }
+.bar{
+    background: green;
+    width: 100%;
+    height: 20px;
+  }
+.health-bar h2{
+    font-family: 'Acme', sans-serif;
+    background-color: white;
+}
+#vs-logo{
+    opacity:0;
+    width: 100px;
+  }
+
+/* STYLING FOR THE CONTROLLERS CARD */
+.modal {
+    text-align:justify;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.close-button:hover {
+    background-color: darkgray;
+}
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+
+

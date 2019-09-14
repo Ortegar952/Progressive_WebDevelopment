@@ -4,321 +4,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Street Fighters</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/ico" href="tab-logo.png" />
+    <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="main-css/main.css" />
+    <script type="text/javascript" src="main-js/main.js"></script>
+    <link rel="icon" type="image/ico" href="images/tab-logo.png" />
 </head>
-<style>
-  body, html {
-      padding: 0;
-      margin:0;
-      text-align: center;
-}
-.stage{
-  background-image: url("stage1.gif");
-  height: 100%; 
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.start-button img{
-    margin: 4% auto;
-    animation-name:bounceIn;
-    animation-duration: 1.5s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-direction: alternate-reverse;
-}
-.start-button img:hover{
-    cursor: pointer;
-}
-#myPlayer{
-    opacity: 0;
-    margin-left:0;
-    margin-right:0;
-    margin-bottom: 0;
-    height:280px;
-    float:left;
-    animation-duration:0.8s;
-}
-@keyframes bounceIn {
-    0% {
-        transform: scale(0.5);
-    }
-    25%{
-        transform: scale(0.7);
-    }
-    50%{
-        transform: scale(0.8);
-    }
-    75%{
-        transform: scale(0.9);
-    }
-    100%{
-        transform: scale(1.2);
-    }
-}
-.myOponent img{
-    height: 280px;
-    z-index: -1;
-}
-.myOponent{
-    opacity: 0;
-    margin-top: 0;
-    padding: 0;
-    margin-left: 780px;
-    position: absolute;
-    transform: scaleX(-1);
-}
-#ko, #powerUp, #win, #attack, #akuma{
-    display: none;
-}
-.health-bar {
-  opacity: 0;
-  display: inline-block;
-  box-sizing: border-box;
-  width: 300px;
-  height: 20px;
-  padding: 5px;
-  background: #ddd;
-  border-radius: 5px;
-}
-.bar {
-  background: green;
-  width: 100%;
-  height: 10px;
-}
-
-#oponent{
-    float:right;
-}
-#oponent1{
-    float:left;
-}
-.hit {
-  background: rgba(255,255,255,0.6);
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 0px;
-  transition: width .5s linear;
-}
-</style>
 <body>
     <div class="stage">
-         <div class="health-bar" data-total="1000" data-value="1000" id='oponent1'>
-            <div class="bar" id='player1'>
-            </div>
-         </div>
-         <div class="health-bar"  data-total="1000" data-value="1000" id='oponent'>
-            <div class="bar" id='player2'>
-            </div>
-         </div>
-            <div class="start-button">
-            <img src="start_button.png"  />
+            <!-- PLAYERS HEATLH BAR -->
+        <div class="health-bar" data-total="1000" data-value="1000" id='oponent1'>
+            <div class="bar" id='RyuH'></div>
+            <h2>RYU</h2>
         </div>
-        <div class="myPlayer">
-            <img src="fighter.gif" id="myPlayer">
+        <span><img src="images/vs.png" id='vs-logo'></span>
+        <div class="health-bar"  data-total="1000" data-value="1000" id='oponent'>
+            <div class="bar" id='AkumaH'></div>
+            <h2>Akuma</h2>
         </div>
-        <div class="myOponent">
-            <img src="Oponent.gif" id="myOponent">
+            <!-- FIGHTING ARENA -->
+        <div class="start-button">
+            <img src="images/start_button.png"  />
         </div>
-    </div>
-    <audio autoplay id='audio' visibility='hidden'>
-        <source src="Ryu-T.mp3" type="audio/mpeg" id='Ryu-Voice'>
+                <!-- PLAYERS FOR GAME -->
+        <div class="Player1Cont">
+            <img src="images/fighter.gif" id="Player1">
+        </div>
+        <div class="Player2Cont">
+            <img src="images/Oponent.gif" id="Player2">
+        </div>
+   </div>
+                <!-- TRACKS AND SOUND EFFECTS FOR THE GAME -->
+    <audio autoplay visibility='hidden' id='ThemeSong'>
+        <source src="audio/Ryu-T.mp3" type="audio/mpeg" id='themeSong'>
+            <!-- UNCOMMENT THIS TO PLAY THE THEME SONG -->
     </audio>
-    <video id="ko" >
-        <source src="K_O.mp3" type="audio/mpeg" id='ko'>
+    <video id="KO" >
+        <source src="audio/K_O.mp3" type="audio/mpeg" id='KO'>
     </video>
     <video id="powerUp" >
-        <source src="powerUp.mp3" type="audio/mpeg" id='powerUp'>
+        <source src="audio/powerUp.mp3" type="audio/mpeg" id='powerUp'>
     </video>
     <video id="win" >
-        <source src="win.mp3" type="audio/mpeg" id='win'>
+        <source src="audio/win.mp3" type="audio/mpeg" id='win'>
     </video>
     <video id="attack" >
-        <source src="attack1.mp3" type="audio/mpeg" id='attack'>
+        <source src="audio/attack1.mp3" type="audio/mpeg" id='attack'>
     </video>
     <video id="akuma" >
-        <source src="akuma.mp3" type="audio/mpeg" id='akuma'>
+        <source src="audio/akuma.mp3" type="audio/mpeg" id='akuma'>
     </video>
+    <video id="JumpSound" >
+        <source src="audio/JumpSound.mp3" type="audio/mpeg" id='JumpSound'>
+    </video>
+    <video id="RyuJump" >
+        <source src="audio/RyuJumpSound.mp3" type="audio/mpeg" id='JumpSound'>
+    </video>
+    <video id="ryuVic" >
+        <source src="audio/RyuVictory.mp3" type="audio/mpeg" id='JumpSound'>
+    </video>
+    <video id="ryuAttack" >
+        <source src="audio/ryuattack.mp3" type="audio/mpeg" id='ryuAttack'>
+    </video>
+    <video id="ryuPunch" >
+        <source src="audio/PunchingBag.mp3" type="audio/mpeg" id='ryuPunch'>
+    </video>
+    <video id="punchCombo" >
+        <source src="audio/punchCombo.mp3" type="audio/mpeg" id='punchCombo'>
+    </video>
+    <!-- <video id="akuma" >
+        <source src=audio/"akuma.mp3" type="audio/mpeg" id='akuma'>
+    </video> -->
+
+                    <!-- DIV CARD FOR DISPLAYING CONTROLLERS -->
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close-button">×</span>
+                <h3>Player 1 Keys</h3>
+                <p>Move Left: Left Arrow <span>&#8592;</span></p>
+                <p>Move Right: Right Arrow <span>&#8594;</span></p>
+                <p>Special Attack: Down Arrow <span>&#8595;</span></p>
+                <p>Hadouken: Space Bar <span> &#8212;</span></p>
+                <p>=================================== </p>
+                <h3>Player 2 Keys</h3>
+                <p>Move Left: Key A </p>
+                <p>Move Right: Key D </p>
+                <p>Jump: Key W </p>
+                <p>Special Attack : Key S <span> &#8212;</span></p>
+                <h4>Press The Key Q On The Keyboard To Bring This Pop Up Again</h4>
+            </div>
+        </div>
+                    
 
 </body>
-<script>
-    let stage = document.querySelector('.stage');
-    let startBtn = document.querySelector('.start-button');
-    let myFighter = document.querySelector('#myPlayer');
-    let Ryu = document.querySelector('.myPlayer');
-    let ryuVoice = document.querySelector('#Ryu-Voice');
-    let myOponent = document.querySelector('.myOponent');
-    let akuma = document.querySelector('#myOponent');
-    let ko = document.getElementById('ko');
-    let powerUp = document.getElementById('powerUp');
-    let win = document.getElementById('win');
-    let attack = document.getElementById('attack');
-    let akumaVoice = document.getElementById('akuma');
-    let healthBar1 = document.querySelector('#player1');
-    let healthBar2 = document.querySelector('#player2');
-    let bar = document.getElementsByClassName('health-bar');
-    console.log(bar)
-    let windowWidth = 1080;
-    let ryuHeal = 100;
-    let akumaHeal = 100;
-    startBtn.addEventListener('click', function(){
-        startBtn.remove();
-        myFighter.style.opacity = '1';
-        myOponent.style.opacity = '1';
-        Array.from(bar).forEach(health=>{
-            health.style.opacity = '1';
-        });
-        myOponent.style.marginTop = '29%'
-        myFighter.style.marginTop = '31%';
-    })
-    let moveR = 0;
-    let moveL = 0;
-    document.addEventListener('keydown',function(event){
-        if(event.code === 'ArrowRight'){
-          if(moveL !== windowWidth){
-                moveR += 90;
-           }
-            myFighter.style.marginLeft = moveR + 'px';
-            moveL = moveR;
-            console.log('move Right: ', moveR)
-            console.log('move Left: ', moveL)
-        }
-        if(event.code === 'ArrowLeft'){
-            moveR -= 90;
-            myFighter.style.marginLeft = moveR + 'px';
-            console.log('Moving Left', moveL);
-            moveL = moveR;
-        }
-        if(event.code === 'Space'){
-            if( akumaHeal < 70 ){
-                console.log('almost dying')
-                healthBar2.style.backgroundColor = 'red';
-            }
-            console.log('Hadouken !!')
-            myFighter.src = "Hadouken2.gif";
-            myFighter.style.height = '';
-            myFighter.style.marginTop = '30%';
-            akumaHeal -= 20;
-            healthBar2.style.width =akumaHeal + '%';
-            playAudio(powerUp);
-            function fighter() {
-                setTimeout(function(){
-                    ryuVoice.src = 'Ryu-T.mp3';
-                    myFighter.src = "fighter.gif";
-                    myFighter.style.marginTop = '30%';
-                    myFighter.style.height = '280px';
-
-                }, 1570);
-            }
-            fighter(); 
-        }
-        if(event.code === 'ArrowUp'){
-            myFighter.src = "RyuKick.gif";
-            myFighter.style.marginTop = '5%';
-            myFighter.style.height = '330px';
-            // akumaHeal -= 20;
-            // healthBar2.style.width = akumaHeal + '%';
-            function fighter() {
-                setTimeout(function(){
-                    myFighter.src = "fighter.gif";
-                    myFighter.style.marginTop = '30%';
-                    myFighter.style.height = '280px';
-
-                },1700);
-            }
-            fighter(); 
-        }
-        if(event.code === 'ArrowDown'){
-            myFighter.src = "Ryu-Special.gif";
-            myFighter.style.height = '560px';
-            myFighter.style.marginTop = '7%';
-            function fighter() {
-                setTimeout(function(){
-                    myFighter.src = "fighter.gif";
-                    myFighter.style.marginTop = '30%';
-                    myFighter.style.height = '280px';
-
-                },7000);
-            }
-            fighter(); 
-        }
-        if(event.code === 'KeyW'){
-            if(ryuHeal <= 70 ){
-                console.log('almost dying')
-                healthBar1.style.backgroundColor = 'red';
-            }
-            akuma.src = "akuma-special.gif";
-            myOponent.style.marginTop = '-10%';
-            playAudio(akumaVoice)
-            akuma.style.height = '750px';
-            ryuHeal -= 50;
-            healthBar1.style.width= ryuHeal + '%';
-            playAudio(attack)
-            function fighter() {
-                setTimeout(function(){
-                    akuma.src = "akuma-attack.gif";
-                    akuma.style.height = '500px';
-                    myOponent.style.marginTop = '12%';
-                    myOponent.style.marginLeft = '400px'
-                    playAudio(ko);
-                },2600);
-                setTimeout(function(){
-                    myFighter.src = "Ryu-Lost.gif";
-                },2050)
-                setTimeout(function(){
-                    myFighter.src = 'Ryu-Dead.gif';
-                    akuma.src = 'finalBlow.gif';
-                },4050) 
-                setTimeout(function(){
-                    akuma.src = 'Oponent.gif';
-                    akuma.style.height = '280px';
-                    myOponent.style.marginTop = '28%';
-                    myOponent.style.marginLeft = '450px'
-                    myFighter.src = "fighter.gif";
-                    // playAudio(win);
-                },6300)
-            }    
-            if(ryuHeal === 0){
-                console.log('Ryu-Lost')
-                myFighter.src ='Ryu-Dead.gif';
-                akuma.src = 'Akuma-Wins.gif';
-                akuma.style.height = '480px';
-                myOponent.style.marginTop = '15%';
-                playAudio(win);//finish tweaking the end;
-                setTimeout(function(){
-                    akuma.src = "finalAkuma.gif";
-                    akuma.style.height = '280px';
-                    myOponent.style.marginTop = '25%';
-                    Ryu.style.display ='none';
-                },1000)
-            }else{
-                fighter(); 
-            }
-        }
-    })
-    function playAudio(song) { 
-        song.play(); 
-    } 
-    let AkumaR = 0;
-    let AkumaL = 0;
-    document.addEventListener('keydown',function(event){
-        if(event.code === 'KeyA'){
-            console.log('Akuma Moving Left');
-            AkumaR -= 50;
-            akuma.style.marginRight = AkumaR + 'px';
-           // AkumaL = AkumaR;
-
-        }
-        if(event.code === 'KeyD'){
-            console.log('Akuma Moving Left');
-            AkumaL -= 50;
-            akuma.style.marginLeft = AkumaL + 'px';
-
-        }
-    })
-  
-</script>
 </html>
