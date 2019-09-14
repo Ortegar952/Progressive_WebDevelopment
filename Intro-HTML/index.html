@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Magic Beans</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+    body{
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        background-color: whitesmoke;
+    }
+    .box{
+        width: 350px;
+        height: 250px;
+        border: solid 1.5px black;
+        cursor:pointer;
+        display: block;
+        margin-left: 35%;
+        margin: 10% auto;
+    }
+    .box p{
+        font-size: 35px;
+        margin-top:30%;
+        color:white;
+    }
+    .box:hover{
+        border: salmon 1px solid;
+        transform: scale(1.2);
+        transition: ease-in .1s;
+    }
+</style>
+<body>
+    <h1> Magic Beans</h1>
+    <div class='box 1 ' id='square1'>
+        <!-- <p>Click Me</p> -->
+    </div>
+ <!--    <div class='box 2' id='square2' >
+        <p>No...Click Me</p>
+    </div>
+    <div class='box 3' id='square3' >
+        <p>Noooo !!!Click Me Instead</p>
+    </div> -->
+</body>
+<script>
+ let square1 = document.querySelector('#square1')
+ let randomColors = ['#FF7893','#E8266D','#FFE678','#062C6D','#EDBD1F'];
+ //document.body.style.backgroundColor = "red";
+ function RandomColor(){
+    let size = randomColors.length;
+    //console.log(size)
+    let color = Math.floor(Math.random() * size);
+    square1.style.backgroundColor = randomColors[color];
+    console.log(color);
+ }
+ square1.addEventListener('click', RandomColor)  
+</script>
+
+</html>
