@@ -1,0 +1,232 @@
+body{
+  background-color: whitesmoke;
+  color: black;
+  font-family: 'Josefin Sans', sans-serif;
+} 
+
+.title{
+  background-color: black;
+  color:white;
+  text-align: center;
+  padding: 20px 8px;
+  font-size: 20px;
+  width: 100%;
+}
+.cont{
+  text-align: center;
+}
+.holders{
+  margin-top: 60px;
+  margin-left: 40px;
+  padding: 10px 20px;
+  display: inline-block;
+  width: 450px;
+  min-height: 480px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition: 0.5s ease;
+  border:black solid 1px;
+}
+.holders span{
+  margin-top: 0;
+  display: block;
+  padding: 10px 10px;
+}
+.text{
+  width: 100%;
+  margin-top: 10px;
+  background-color: whitesmoke;
+}
+.holders:hover{
+  transform: scale(1.02);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.picture img{
+    margin-top:10px;
+    width: 60%;
+    border: salmon 6px solid;
+}
+.picture{
+  text-align: center
+}
+
+.button {
+  background-color:#C90D0D;
+  border: none;
+  color: white;
+  padding: 12px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin-left:5px;
+  cursor: pointer;
+}
+.button:hover{
+  opacity: 0.7;
+  border: black solid 1px;
+}
+.spinner {
+  margin: 100px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+div > h2{
+  text-align: center;
+}
+
+      /* CSS FOR LOADING SPINNER */
+.cube1, .cube2 {
+  background-color: #C90D0D;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: sk-cubemove 1.8s infinite ease-in-out;
+}
+
+.cube2 {
+  animation-delay: -0.9s;
+}
+
+@keyframes sk-cubemove {
+  25%{ 
+    transform: translateX(42px) rotate(-90deg) scale(0.5);
+  } 50% { 
+    transform: translateX(42px) translateY(42px) rotate(-179deg);
+  } 50.1% { 
+    transform: translateX(42px) translateY(42px) rotate(-180deg);
+  } 75% { 
+    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+  } 100% { 
+    transform: rotate(-360deg);
+  }
+}
+
+
+/* MODAL VIEW WINDOW */
+.modal-view{
+  width: 600px;
+  max-width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index:2;
+  height:580px;
+  background-color: #eee;
+  padding: 10px 20px 40px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: solid 12px  #C90D0D;
+  border-top: solid 14px  #C90D0D;
+
+}
+
+.closeBtn{
+  margin-bottom: 15px;
+  padding: 6px 18px;
+  cursor:pointer;
+  width:20px;
+  height:20px;
+  font-weight: bold;
+  align-self:flex-end;
+  opacity:0.3;
+}
+.closeBtn:hover{
+  text-decoration: underline;
+  opacity:1;
+}
+.details-render{
+  padding: 0;
+  margin: 0;
+}
+.details-render h1{
+  font-size: 38px;
+  margin-top:-20px;
+  text-align: center;
+}
+.details-render img{
+  padding-top:5px;
+  width: 40%;
+  float:right;
+  margin-right:40px;
+  border: solid 1px #C90D0D;
+}
+.details-render p{
+  font-size: 16px;
+  padding-top:10px;
+  margin-left: 30px;
+}
+.details-render h3{
+  text-align: center;
+  padding-top: 10px;
+}
+.external-links {
+  margin: 12px auto;
+  text-align: justify;
+  padding-left: 25%;
+
+}
+.details-render a{
+  color:#C90D0D;
+}
+
+
+/* SEARCH BAR */
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+.fa fa-search{
+  color: white;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid black;
+  border-right: none;
+  padding: 10px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: black;
+}
+
+.searchTerm:focus{
+  font-size: 18px;
+  color: #C90D0D;
+}
+
+.searchButton {
+  width: 40px;
+  height: 46px;
+  border: 1px solid black;
+  background: black;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 40%;
+  position: absolute;
+  top: 17%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cont{
+  margin-top: 50px;
+}
+
+@media screen and (min-width: 1900px) {
+  margin-top: -70px;
+}
