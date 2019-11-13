@@ -41,4 +41,8 @@
   color:salmon;
   border-color: white;
 }
+.Calendar{
+  margin: 20px auto;
+  display: inline-block;
+}
 
