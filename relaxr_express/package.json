@@ -1,0 +1,18 @@
+{
+  "name": "relaxr_express",
+  "version": "1.0.0",
+  "description": "![](https://media.giphy.com/media/7bdE7u45ZXkOY/giphy.gif)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mustache-express": "^1.3.0"
+  },
+  "devDependencies": {}
+}

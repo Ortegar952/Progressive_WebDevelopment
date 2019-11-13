@@ -1,0 +1,106 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+.landing-img{
+    background-image:url('/header_bg.jpg');
+    background-size: cover; 
+    color:white;
+    font-size: 25px;
+    height: 600px;
+}
+.landingpage-title{
+    text-align: center;
+    margin-top: 80px;
+}
+.landing-img h1{
+    display: inline-block;
+    padding-left: 70px;
+}
+.landingpage-title button{
+    border: none;
+    border-radius: 10px;
+    background-color:#F2D304;
+    padding: 15px 45px;
+    font-size: 18px;
+}
+.section-two{
+    color:grey;
+    font-size: 20px;
+    line-height:1.6;
+    margin-top: -20px;
+    background-color: whitesmoke;
+    height:500px;
+}
+.sectiontwo-context{
+    padding-top: 25px;
+    padding-left: 60px;
+}
+.sectiontwo-context h1{
+    color:#296488;
+    font-size: 40px;
+}
+.first-half{
+    background-image:url('/testimonial_bg.jpg');
+    background-size: cover; 
+    height: 350px;
+}
+.text-secthree{
+    color:#606161;
+}
+.text-secthree span{
+    margin-left: 42%;
+    color: white;
+}
+.text-cont{
+    margin-top: -20px;
+    text-align: center;
+}
+.text-cont h1,span{
+    font-size: 25px;
+    padding-top: 40px;
+}
+.yellow-stripe{
+    text-align: center;
+    background-color:#F2D304;
+    height: 100px;
+}
+.yellow-stripe button{
+    background-color: #074063;
+    color: white;
+    font-size: 15px;
+    padding: 15px 70px;
+    margin-top: 22px;
+    border: none;
+    border-radius: 10px;
+}
+.footer-section{
+    margin-top:-28px;
+    background-color: #3B3D3D;
+    height:250px;
+}
+.footer-section h1{
+    color:#F2D304;
+    font-weight: bold;
+    font-size: 40px;
+    padding-left: 45%;
+    padding-top:40px;
+}
+
+.logos ul,
+.logos li{
+    display: inline;
+    list-style: none;
+    text-decoration: none;
+    padding: 15px;
+}
+.logos{
+    display: inline-block;
+    margin-left: 43%;
+}
+.footer-section p{
+    margin-top: 60px;
+    text-align: center;
+    color:white;
+    display: block;
+}
